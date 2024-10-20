@@ -5,6 +5,11 @@ const adminRouter = require("./routes/admin")
 const userRouter = require("./routes/user");
 
 // Middleware for parsing request bodies
+
+app.get('/',(req,res)=>{
+    res.send("This is check");
+})
+
 app.use(bodyParser.json());
 app.use("/admin", adminRouter)
 app.use("/user", userRouter)

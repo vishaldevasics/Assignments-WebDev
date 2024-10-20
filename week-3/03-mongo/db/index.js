@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://vishaldevasics:O2M6LApy2T3RPN7a@cluster0.df27u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+// Connect to MongoDB   
+mongoose.connect('mongodb+srv://vishaldevasics:O2M6LApy2T3RPN7a@cluster0.df27u.mongodb.net/course_selling_app');
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
@@ -20,11 +20,16 @@ const UserSchema = new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref : 'Course'
         }
-    ]
+    ],
 });
 
 const CourseSchema = new mongoose.Schema({
     // Schema definition here
+    title:String,
+    description:String,
+    imageLink:String,
+    price:Number,
+
 });
 
 const Admin = mongoose.model('Admin', AdminSchema);
